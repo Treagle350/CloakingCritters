@@ -48,7 +48,7 @@ public class MenuState extends GameState {
 		
 		g.setColor(titleColor);
 		g.setFont(titleFont);
-		g.drawString("Cloaking Critters", 80, 70);
+		g.drawString("Cloaking Critters", 60, 70);
 		
 		g.setFont(font);
 		for(int i = 0; i < options.length; i++) {
@@ -65,8 +65,8 @@ public class MenuState extends GameState {
 		if(currentChoice == 0) {
 			//start
 		}
-		if(currentChoice == 0) {
-			//help
+		if(currentChoice == 1) {
+			gsm.setState(GameStateManager.CATALOGSTATE);
 		}
 		if(currentChoice == 2) {
 			System.exit(0);

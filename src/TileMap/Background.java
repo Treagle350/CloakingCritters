@@ -1,12 +1,8 @@
 package TileMap;
 
-import Main.GamePanel;
-
 import java.awt.*;
 import java.awt.image.*;
 import javax.imageio.ImageIO;
-
-import Main.GamePanel;
 
 public class Background {
 	
@@ -17,8 +13,6 @@ public class Background {
 	private double x;
 	private double y;
 	private int count = 0;
-	
-	private double moveScale;
 	
 	public Background(String s1,String s2) {
 		try {
