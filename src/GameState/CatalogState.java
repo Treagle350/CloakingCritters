@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
+import java.util.ArrayList;
 import java.util.Arrays;
 
 import TileMap.Background;
@@ -13,7 +14,8 @@ public class CatalogState extends GameState {
 	private Background bg;
 	private Font font;
 	private Font subFont;
-	
+	final int DIGESTABLE = 25;
+
 	private int currentChoice;
 	private String[] options = {
 			"Love",
@@ -48,49 +50,41 @@ public class CatalogState extends GameState {
 		bg.update();
 	}
 
-	private void stringPrintParser(String string, Graphics2D g) {
-		int[] spaceIndex;
-		int[] pointIndex;
-		boolean fillFlag;
-		
-		int len;
-		int len2 = 1;
-		int digestable;
-		int limit;
+	private ArrayList<String> stringPrintParser(String string) {
+		int len = 0;
+		int len2 = 99;
 		int index = 0;
 		int count = 0;
-		digestable = 26;
-		len = string.length();
+		ArrayList<String> stringArray = new ArrayList<String>();
 		
-		int i = 0;
-		
-		g.setFont(subFont);
 		String digestableString;
 		String[] subString;
 		
+		subString = string.split(" ");
+		
 		while(index > -1) {
-			//1 sentence
-			string = string.substring(index);
-			subString = string.split(" ");
 			digestableString = "";
-			while(len2 < digestable) {
+			string = string.substring(index);
+			while(len < DIGESTABLE && len2 > DIGESTABLE) {
 				digestableString = digestableString + subString[count] + " ";
-				len2 = digestableString.length();
+				len = digestableString.length();
 				count = count + 1;
+				len2 = string.length();
 			}
+			len = 0;
 			index = digestableString.lastIndexOf(" ");
-			if(index > 0) {
-				index = digestableString.lastIndexOf(" ");//replace
-				g.drawString(digestableString, 30, 50 + (10*i));
-				System.out.println(index);
-				i = i + 1;
+			stringArray.add(digestableString);
 			}
+		return stringArray;
+	}
+	
+	private String stringStuffer(String string) {
+		int diff = string.length()%25;
+		while(diff != 0) {
+			string = string + " ";
+			diff = string.length()%25;
 		}
-		/*
-		for(int i = 0;i<limit;i++) {
-			digestableString = string.substring(i*digestable, (i+1)*digestable);
-			g.drawString(digestableString, 30, 50 + (10*i));
-		}*/
+		return string;
 	}
 	
 	@Override
@@ -102,8 +96,11 @@ public class CatalogState extends GameState {
 		g.drawString("Cloaking Critters", 30, 30);
 		
 		String string;
-		string = "Hello, this is the catalog page of Cloaking Critters. Feel free to browse to your heart's content.";
-		
+		String string2;
+		String newLine;
+		newLine = "                          ";
+		string = ("Hello, this is the catalog page of Cloaking Critters.") + newLine + ("Feel free to browse to your heart's content.") + newLine + newLine + ("Made by Treagle350");
+		string = stringStuffer(string);
 		//Emotions are something special, wouldn't you agree ?
 		//I mean, have you ever wondered about their nature ? What happens under the hood of it all ?
 		//Because that's what I ended up doing. I came up with this theory to try to figure some things out.
@@ -116,8 +113,29 @@ public class CatalogState extends GameState {
 		//
 		//- Treagle350
 		
-		stringPrintParser(string, g);
+		String printString;
+		ArrayList<String> stringArray;
 		
+		stringArray = stringPrintParser(string);
+		
+		g.setFont(subFont);
+		
+		for(int i = 0;i<stringArray.size();i++) {
+			printString = stringArray.get(i);
+			g.drawString(printString, 30, 50 + (10*i));
+		}
+		
+		String printString2;
+		ArrayList<String> stringArray2;
+		
+		//string2 = ("I came up with this theory to try to figure some things out regarding emotions.") + newLine + ("I mainly ended up using Robert Plutchik's theory to come up with this.");// + newLine + ("Hence why the following should only be seen as my stance on the matter, a stance which you are free to contest."); + newLine + ("Please do therefore take it with a grain of salt.");
+		
+		stringArray2 = stringPrintParser(string);
+		
+		for(int i = 0;i<stringArray2.size();i++) {
+			printString2 = stringArray2.get(i);
+			g.drawString(printString2, 167, 50 + (10*i));
+		}
 	}
 
 	@Override
