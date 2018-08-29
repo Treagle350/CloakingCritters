@@ -9,7 +9,7 @@ public class GameStateManager {
 	private int currentState;
 	
 	public static final int MENUSTATE = 0;
-	public static final int CATALOGSTATE = 1;
+	public static final int HELPSTATE = 1;
 	
 	public GameStateManager() {
 		gameStates = new ArrayList<GameState>();

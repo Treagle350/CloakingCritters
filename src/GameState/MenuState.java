@@ -66,7 +66,7 @@ public class MenuState extends GameState {
 			//start
 		}
 		if(currentChoice == 1) {
-			gsm.setState(GameStateManager.CATALOGSTATE);
+			gsm.setState(GameStateManager.HELPSTATE);
 		}
 		if(currentChoice == 2) {
 			System.exit(0);

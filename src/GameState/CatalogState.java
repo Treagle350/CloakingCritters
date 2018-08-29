@@ -5,16 +5,17 @@ import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 import TileMap.Background;
+import Text.Dialogue;
 
 public class CatalogState extends GameState {
 	
 	private Background bg;
 	private Font font;
 	private Font subFont;
-	final int DIGESTABLE = 25;
+	final int DIGESTABLE = 23;
+	int size = 0;
 
 	private int currentChoice;
 	private String[] options = {
@@ -35,7 +36,6 @@ public class CatalogState extends GameState {
 			bg = new Background("/Backgrounds/book1.png","/Backgrounds/book2.png");
 		
 			font = new Font("Century Gothic", Font.PLAIN, 12);
-			subFont = new Font("Century Gothic", Font.PLAIN, 10);
 		}
 		catch(Exception e) {
 			e.printStackTrace();
@@ -49,93 +49,68 @@ public class CatalogState extends GameState {
 	public void update() {
 		bg.update();
 	}
-
-	private ArrayList<String> stringPrintParser(String string) {
-		int len = 0;
-		int len2 = 99;
-		int index = 0;
-		int count = 0;
-		ArrayList<String> stringArray = new ArrayList<String>();
-		
-		String digestableString;
-		String[] subString;
-		
-		subString = string.split(" ");
-		
-		while(index > -1) {
-			digestableString = "";
-			string = string.substring(index);
-			while(len < DIGESTABLE && len2 > DIGESTABLE) {
-				digestableString = digestableString + subString[count] + " ";
-				len = digestableString.length();
-				count = count + 1;
-				len2 = string.length();
-			}
-			len = 0;
-			index = digestableString.lastIndexOf(" ");
-			stringArray.add(digestableString);
-			}
-		return stringArray;
-	}
-	
-	private String stringStuffer(String string) {
-		int diff = string.length()%25;
-		while(diff != 0) {
-			string = string + " ";
-			diff = string.length()%25;
-		}
-		return string;
-	}
 	
 	@Override
 	public void draw(Graphics2D g) {
+		
 		bg.draw(g);
 		
 		g.setColor(Color.BLACK);
 		g.setFont(font);
-		g.drawString("Cloaking Critters", 30, 30);
+		ArrayList<String> titles = new ArrayList<String>();
+		String title1 = "Cloaking Critters";
+		String title2 = "Emotions";
+		String title3 = "Addressing conflict";
 		
-		String string;
+		Dialogue title = new Dialogue(DIGESTABLE, 30, 30, g, 12);
+		title.dialogueMaker(title1);
+		title.dialogueMaker(title2);
+		title.dialogueMaker(title3);
+		title.stringPrinter(currentChoice);
+		
+		String string1;
+		String string1a;
+		String string1b;
 		String string2;
+		String string2a;
+		String string2b;
 		String newLine;
-		newLine = "                          ";
-		string = ("Hello, this is the catalog page of Cloaking Critters.") + newLine + ("Feel free to browse to your heart's content.") + newLine + newLine + ("Made by Treagle350");
-		string = stringStuffer(string);
-		//Emotions are something special, wouldn't you agree ?
-		//I mean, have you ever wondered about their nature ? What happens under the hood of it all ?
-		//Because that's what I ended up doing. I came up with this theory to try to figure some things out.
-		//I started my research on various forums and moved on from there.
-		//After a while I came into contact with Robert Plutchik's work, which significantly helped to shape this theory.
-		//What I have now is an explanation for why emotions work the way they do.
-		//However there are still a mountain of questions ahead, that all need to tackled.
-		//That's why if you want to join you're more than welcome to join the project.
-		//There should always be room for different visions to shine heir light upon this matter.
-		//
-		//- Treagle350
+		newLine = "                        ";
+		
+		string1 = ("Hello, this is the help page of Cloaking Critters.") + newLine + ("This is mainly intended as a fast way to get   aqcuinated with the    ideology behind this   videogame.            ") + newLine ;//("Here, you can browse through the different aspects of this theory.");
+		string1 = string1 + ("Having said that,      this is a videogame that tries to explain the exact nature of emotions. Or more specifically, the things we end up doing to cover them up.");
+		
+		string1a = "Emotions are a means for two social entities to convey a hierarchical  standing toward one    another. Hence why     emotions, unlike logic, needs to be validated by external means.       ";
+		string1a = string1a + newLine + ("To portray this using an example : Imagine an   angry customer yelling at a cashier over a    mispriced item.");
+		
+		string1b = ("As stated on the previous page, conflict is a reaction to a perceived social  imbalance.            ");
+		string1b = string1b + newLine +("Hence when the social  imbalance gets resolved, the conflict dissolves." + newLine + "Therefore if one wants to stop conflict effectively you have to address the cause underneath, and  not the consequences   themselves.");
 		
 		String printString;
 		ArrayList<String> stringArray;
 		
-		stringArray = stringPrintParser(string);
-		
-		g.setFont(subFont);
-		
-		for(int i = 0;i<stringArray.size();i++) {
-			printString = stringArray.get(i);
-			g.drawString(printString, 30, 50 + (10*i));
-		}
-		
+		Dialogue page1 = new Dialogue(DIGESTABLE, 30, 50, g, 10);
+		page1.dialogueMaker(string1);
+		page1.dialogueMaker(string1a);
+		page1.dialogueMaker(string1b);
+		page1.stringPrinter(currentChoice);
+
 		String printString2;
 		ArrayList<String> stringArray2;
 		
-		//string2 = ("I came up with this theory to try to figure some things out regarding emotions.") + newLine + ("I mainly ended up using Robert Plutchik's theory to come up with this.");// + newLine + ("Hence why the following should only be seen as my stance on the matter, a stance which you are free to contest."); + newLine + ("Please do therefore take it with a grain of salt.");
+		string2 = ("This theory is based off Robert Plutchik's      representation of emotions.") + newLine + ("I ended up adding a few  things on top of his work, just to show how I ended up interpreting emotions.") + newLine + ("Hence why the following should only be seen as my stance on the matter.") + newLine;
+		string2 = string2 + ("Feel free to browse around.") + newLine + ("- Treagle350");
 		
-		stringArray2 = stringPrintParser(string);
+		string2a = ("The customer in his anger, feels a sense of       righteousness entitled to him as he feels that the store wronged him.");
+		string2a = string2a + newLine + ("By creating this conflict, he is trying to correct the social imbalance he sees. This by positioning himself above the cashier, in an effort to try to compensate for the lower position he received by the mispriced item.");
 		
-		for(int i = 0;i<stringArray2.size();i++) {
-			printString2 = stringArray2.get(i);
-			g.drawString(printString2, 167, 50 + (10*i));
-		}
+		string2b = ("To translate this to the previous example :    "+ newLine + "When the cashier       addresses the fact that the item was 'accidentally' mispriced and manages to convince the customer of that fact.            " + newLine +"The conflict will stop." + newLine + "Now that the basics are out of the way, let's delve deeper...");
+		
+		Dialogue page2 = new Dialogue(DIGESTABLE, 167, 50, g, 10);
+		page2.dialogueMaker(string2);
+		page2.dialogueMaker(string2a);
+		size = page2.dialogueMaker(string2b);
+		page2.stringPrinter(currentChoice);
 	}
 
 	@Override
@@ -143,12 +118,12 @@ public class CatalogState extends GameState {
 		if(k == KeyEvent.VK_LEFT) {
 			currentChoice--;
 			if(currentChoice == -1) {
-				currentChoice = options.length - 1;
+				currentChoice = size - 1;
 			}
 		}
 		if(k == KeyEvent.VK_RIGHT) {
 			currentChoice++;
-			if(currentChoice == options.length) {
+			if(currentChoice == size) {
 				currentChoice = 0;
 			}
 		if(k == KeyEvent.VK_DOWN) {
