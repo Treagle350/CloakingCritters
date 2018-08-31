@@ -1,2 +1,2 @@
 # CloakingCritters
-Emotions and how we end up concealing them.
+A pschological self-development tool disguised as a videogame.
