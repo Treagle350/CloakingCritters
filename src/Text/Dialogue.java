@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class Dialogue {
 	private int lineDIGESTABLE;
-	private int pageDIGESTABLE;
+	//private int pageDIGESTABLE;
 	ArrayList<String> dialogue;
 	ArrayList<String> pages;
 	String printString;
