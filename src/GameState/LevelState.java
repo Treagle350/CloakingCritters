@@ -15,7 +15,7 @@ public class LevelState extends GameState {
 		this.gsm = gsm;
 
 		player = new characterEntity(50, 50);
-		bg = new Background("/BackGrounds/level1.png","/BackGrounds/level2.png");
+		bg = new Background("/BackGrounds/level1.png","/BackGrounds/level1.png");
 	}
 
 	@Override
