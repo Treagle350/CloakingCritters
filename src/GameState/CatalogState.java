@@ -55,6 +55,7 @@ public class CatalogState extends GameState {
 		String title11 = "Remorse";
 		String title12 = "Contempt";
 		String title13 = "Aggression";
+		String title14 = "Emotional Equilibrium";
 		
 		Dialogue title = new Dialogue(DIGESTABLE, 30, 30, g, 12);
 		title.dialogueMaker(title1);
@@ -70,6 +71,7 @@ public class CatalogState extends GameState {
 		title.dialogueMaker(title11);
 		title.dialogueMaker(title12);
 		title.dialogueMaker(title13);
+		title.dialogueMaker(title14);
 		title.stringPrinter(currentChoice);
 		
 		String string1, string1a, string1b, string1c, string1d, string1e, string1f, string1g, string1h, string1i, string1j, string1k, string1l, string1m;
@@ -83,13 +85,14 @@ public class CatalogState extends GameState {
 		string1c = ("Every emotion that gets expressed is innately  caused by the exact    opposite emotion.     ") + newLine + ("Consider the emotion we end up expressing the  active one, and the one fuelling it the subconcious emotion.              ") + newLine + ("The active emotion     therefore functions as a coping mechanism to  deal with the subconcious one.");
 		string1d = ("The figure on the right is a plutchik wheel.  ") + newLine + ("The parts you see are the different kind of primary emotions in existence. In respecive order they're:" + newLine + "Ectasy in yellow       Vigilance in orange    Rage in red            Loathing in purple     Grief in blue          Amazement in dark green Terror in green        Acceptance in light green");
 		string1e = ("Optimism is a secondary emotion arising from both ectasy and vigilance. ")+ newLine +("Someone optimistic is  going to look for answers to allow themselves a  brighter outlook on life.") + newLine + ("They are constantly    looking for hope, because they internally live in disapproval.");
-		string1f = ("Love is a secondary    emotion arising from both ectasy and admiration.") + newLine + ("Someone loving is going to...");
-		string1g = ("Submission is a secondary emotion arising from both admiration and terror.") + newLine + ("Someone submissive is  going to...");
-		string1h = ("Awe is a secondary     emotion arising from both terror and amazement. ") + newLine + ("Someone in awe is going to...");
-		string1i = ("Disapproval is a secondary emotion arising from both grief and amazement.  ") + newLine + ("Someone disagreeing is going to...");
-		string1j = ("Remorse is a secondary emotion arising from both grief and disgust.    ") + newLine + ("Someone remorsefull is going to...");
-		string1k = ("Contempt is a secondary emotion arising from both disgust and rage.     ") + newLine + ("Someone contemptive is going to distance themself from others to protect their own, because they innately live in submission.") + newLine + ("By living in fear for the hazards that could harm, one can put his trust in oneself to eliminate the hazard.");
+		string1f = ("Love is a secondary    emotion arising from both ectasy and admiration.") + newLine + ("Someone loving is going to want to appear      trustworthy as much as possible, this to make sure people like them and they can get along with everyone.             ") + newLine + ("They are constantly    looking for acceptance, because they innately live in remorse.");
+		string1g = ("Submission is a secondary emotion arising from both admiration and terror.") + newLine + ("Someone submissive is  going to avoid conflict as much as possible.  ") + newLine + ("They easily get scared and end up clinging to others in order for them to address their fears, however the only reason why they do so is because they see the thing causing their fear with nothing but contempt.");
+		string1h = ("Awe is a secondary     emotion arising from both terror and amazement. ") + newLine + ("Someone in awe is going to shelter behind others when confronted. Because they're using them as  minions to confront their own fears.            ") + newLine + ("They live in awe because it allows them to use others to solve their fears,  internally however they're fuelled by aggression.");
+		string1i = ("Disapproval is a secondary emotion arising from both grief and amazement.  ") + newLine + ("Someone disagreeing is going to turn their back on others rather quickly.") + newLine + ("Quick to be amazed at  how sad the world tends to be, they end up     dissaproving of a lot of things they come into  contact with by running away from them.");
+		string1j = ("Remorse is a secondary emotion arising from both grief and disgust.    ") + newLine + ("Someone remorseful is  going to regret everything he/she comes into contact with, generally feeling sorry for themselves along the way.              ") + newLine + ("They live in remorse   because they're fuelled by love.");
+		string1k = ("Contempt is a secondary emotion arising from both disgust and rage.     ") + newLine + ("Someone contemptive is going to distance themself from others to protect their own, because they innately live in submission.") + newLine + ("By living in disgust for the hazards that could harm, one can use his  anger to eliminate the hazard.");
 		string1l = ("Aggression is a secondary emotion arising from both rage and vigilance.   ") + newLine + ("Someone aggressive is  going to look for answers at the cost of themselves and others, because they innately live in awe. ") + newLine + ("Their pursuit for answers stems from the fear they have for the unforseenable.");
+		string1m = ("The innate preference  over certain emotions, and dislike over others.");
 		
 		Dialogue page1 = new Dialogue(DIGESTABLE, 30, 50, g, 10);
 		page1.dialogueMaker(string1);
@@ -105,6 +108,7 @@ public class CatalogState extends GameState {
 		page1.dialogueMaker(string1j);
 		page1.dialogueMaker(string1k);
 		page1.dialogueMaker(string1l);
+		page1.dialogueMaker(string1m);
 		page1.stringPrinter(currentChoice);
 		
 		string2 = ("This theory is based off Robert Plutchik's      representation of emotions.") + newLine + ("I ended up adding a few  things on top of his work, just to show how I ended up interpreting emotions.") + newLine + ("Hence why the following should only be seen as my stance on the matter.") + newLine + ("Feel free to browse around with the arrow keys, use backspace to go to menu.");
@@ -113,13 +117,14 @@ public class CatalogState extends GameState {
 		string2c = ("The reason the customer became angry, has to do with the fact that he fears that they may have been messing with him the entire time.                 ") + newLine + ("This is also the reason why the conflict will only get resolved when the  cashier actually manages to tackle the customer's fears regarding this   incident.              ") + newLine + ("*fear (terror) is the opposite of anger (rage)");
 		string2d = newLine + newLine + newLine + newLine + newLine + newLine + newLine + newLine + newLine + newLine + "             " + ("These primary emotions then in turn make up new emotions, these emotions are then called secondary emotions.") + " " + ("(E.g. terror + amazement = awe)");
 		string2e = newLine + newLine + newLine + newLine + newLine + newLine + "                 " + ("By not agreeing with the current setting around oneself, you can focus on a more brighter future ahead.                ") + newLine + ("However, caution should be exerted to not resort to hedonism to escape the sadness of disapproval.");
-		string2f = newLine + newLine + newLine + newLine + newLine + newLine + "                 " + (" ");
-		string2g = newLine + newLine + newLine + newLine + newLine + newLine + "                 " + (" ");
-		string2h = newLine + newLine + newLine + newLine + newLine + newLine + "                 " + (" ");
-		string2i = newLine + newLine + newLine + newLine + newLine + newLine + "                 " + (" ");
-		string2j = newLine + newLine + newLine + newLine + newLine + newLine + "                 " + (" ");
-		string2k = newLine + newLine + newLine + newLine + newLine + newLine + "                 " + ("However in the process of doing so, one has to submit to the cause he/she is trying to protect. ") + newLine + ("Seeing others around   oneself as a blight enables you to keep yourself and those dear to you safe.");
+		string2f = newLine + newLine + newLine + newLine + newLine + newLine + "                 " + ("By thinking about the  remorse one encountered, one can use that remorse to better their relations with everyone else.    Therefore avoiding such situations in the future.");
+		string2g = newLine + newLine + newLine + newLine + newLine + newLine + "                 " + ("By having others deal with their fears, they can allow themselves to stay as far away as they see fit. ") + newLine  + ("This reasoning therefore stems from their anger and disgust toward that entity causing it.");
+		string2h = newLine + newLine + newLine + newLine + newLine + newLine + "                 " + ("Under the hood of it all they simply want to    confront the things they see as 'impossible', just not directly.") + ("Seeing    themselves as a medium that tries to herold the world around them of the concepts of 'evil' they want to tackle.");
+		string2i = newLine + newLine + newLine + newLine + newLine + newLine + "                 " + ("By running away from the source of conflict one can however focus on   more optimistic parts of this world.           ") + newLine + ("This reasoning stems from a hope for better      conditions to be out there, optimism if you will.");
+		string2j = newLine + newLine + newLine + newLine + newLine + newLine + "                 " + ("By living in love, one comes to realise the things one could have done better to safeguard that love.") + newLine + ("They end up taking a lot of remorse up as 'their own fault' because they trust and love the ones they're doing it for.");
+		string2k = newLine + newLine + newLine + newLine + newLine + newLine + "                 " + ("However in the process of doing so, one has to submit to the cause he/she is trying to protect. ") + newLine + ("This because one has to trust the cause he/she is trying to defend, whilst simultaneously fearing any threath to it.");
 		string2l = newLine + newLine + newLine + newLine + newLine + newLine + "                 " + ("Seeing everything      unforseenable as an    unwelcome surprise, they can end up pushing     themselves and others to the brink of despair to solve their fears.");
+		string2m = ("Not going to lie, I'm still researching this.");
 		
 		Dialogue page2 = new Dialogue(DIGESTABLE, 167, 50, g, 10);
 		page2.dialogueMaker(string2);
@@ -134,7 +139,8 @@ public class CatalogState extends GameState {
 		page2.dialogueMaker(string2i);
 		page2.dialogueMaker(string2j);
 		page2.dialogueMaker(string2k);
-		size = page2.dialogueMaker(string2l);
+		page2.dialogueMaker(string2l);
+		size = page2.dialogueMaker(string2m);
 		page2.stringPrinter(currentChoice);
 		
 		String string;
