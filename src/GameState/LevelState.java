@@ -14,8 +14,8 @@ public class LevelState extends GameState {
 	public LevelState(GameStateManager gsm) {
 		this.gsm = gsm;
 
-		player = new characterEntity(50, 50);
-		bg = new Background("/BackGrounds/level1.png","/BackGrounds/level1.png");
+		player = new characterEntity(70, 70);
+		bg = new Background("/Backgrounds/level1.png","/Backgrounds/level1.png");
 	}
 
 	@Override
@@ -40,14 +40,8 @@ public class LevelState extends GameState {
 	@Override
 	public void keyPressed(int k) {
 		// TODO Auto-generated method stub
-		int delta1 = 1;
-		int delta2 = 2;
-		
 		if(k == KeyEvent.VK_LEFT) {
-			/*for(int i = delta1;i<delta2;i++) {
-				player.x = player.x - i;
-			}*/
-			player.x = player.x - delta2;
+			player.x = player.x - 2;
 		}
 		if(k == KeyEvent.VK_RIGHT) {
 			player.x = player.x + 2;

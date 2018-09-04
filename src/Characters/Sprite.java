@@ -16,6 +16,7 @@ public class Sprite implements ActionListener {
 	private int y1;
 	
 	private boolean toggle;
+	private boolean fresh;
 	
 	private BufferedImage image;
 	private BufferedImage imaged;
@@ -32,6 +33,7 @@ public class Sprite implements ActionListener {
 		this.y = y;
 		
 		toggle = true;
+		fresh = true;
 		
 		try {
 			image1 = ImageIO.read(getClass().getResourceAsStream(s1));
@@ -58,6 +60,10 @@ public class Sprite implements ActionListener {
 	}
 	
 	public Graphics2D animation(Graphics2D g, int x, int y) {
+		if(fresh) {
+			g.drawImage(image1, (int)x, (int)y, null);
+		}
+		
 		x1 = this.x;
 		y1 = this.y;
 		
@@ -67,11 +73,19 @@ public class Sprite implements ActionListener {
 		if(x<x1) {
 			//Walks to the right
 			image = imagee;
+			fresh = false;
 		}else if(x>x1){
 			//Walks to the left
 			image = imaged;
+			fresh = false;
+		}else if(y>y1){
+			image = imaged;
+			fresh = false;
+		}else if(y<y1){
+			image = imaged;
+			fresh = false;
 		}else {
-			//image = imagee;
+			//image = image1;
 		}
 		
 		g.drawImage(image, (int)x, (int)y, null);
