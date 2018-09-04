@@ -27,7 +27,7 @@ public class LevelState extends GameState {
 	@Override
 	public void update() {
 		// TODO Auto-generated method stub
-		bg.update();
+		//bg.update();
 	}
 
 	@Override

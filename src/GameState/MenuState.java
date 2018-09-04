@@ -41,7 +41,7 @@ public class MenuState extends GameState {
 
 	public void init() {}
 	public void update() {
-		bg.update();
+		//bg.update();
 	}
 	public void draw(Graphics2D g) {
 		bg.draw(g);

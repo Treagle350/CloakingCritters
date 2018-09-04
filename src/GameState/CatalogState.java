@@ -53,7 +53,7 @@ public class CatalogState extends GameState {
 
 	@Override
 	public void update() {
-		bg.update();
+		//bg.update();
 	}
 	
 	@Override

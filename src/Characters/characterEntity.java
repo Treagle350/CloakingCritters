@@ -21,7 +21,7 @@ public class characterEntity {
 		
 		mood = new Mood();
 		nature = new Mood();
-		sprite = new Sprite(x, y, "/Characters/Blob1.png", "/Characters/Blob2.png");
+		sprite = new Sprite(x, y, "/Characters/Blob1.png", "/Characters/Blob2.png", "/Characters/Blob3.png", "/Characters/Blob4.png");
 	}
 	
 	public void move(Graphics2D g) {		
