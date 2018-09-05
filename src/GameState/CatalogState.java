@@ -32,7 +32,7 @@ public class CatalogState extends GameState {
 		this.gsm = gsm;
 		
 		try {
-			bg = new Background("/Backgrounds/book1.png","/Backgrounds/book2.png");
+			bg = new Background("/Backgrounds/book1.png","/Backgrounds/book2.png", 200);
 			plutchik = ImageIO.read(getClass().getResourceAsStream("/Sprites/plutchik.png"));
 			optimism = ImageIO.read(getClass().getResourceAsStream("/Profiles/optimism2.png"));
 			love = ImageIO.read(getClass().getResourceAsStream("/Profiles/love2.png"));

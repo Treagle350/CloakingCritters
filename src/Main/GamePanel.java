@@ -15,7 +15,7 @@ public class GamePanel extends JPanel implements Runnable, KeyListener{
 	
 	public static final int WIDTH = 320;
 	public static final int HEIGHT = 240;
-	public static final int SCALE = 5;
+	public int SCALE = 1;
 	
 	private Thread thread;
 	private boolean running;
@@ -27,8 +27,9 @@ public class GamePanel extends JPanel implements Runnable, KeyListener{
 	
 	private GameStateManager gsm;
 	
-	public GamePanel() {
+	public GamePanel(int scale) {
 		super();
+		this.SCALE = scale;
 		setPreferredSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
 		setFocusable(true);
 		requestFocus();

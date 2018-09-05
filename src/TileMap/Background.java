@@ -19,7 +19,7 @@ public class Background implements ActionListener {
 	
 	private Timer timer;
 	
-	public Background(String s1,String s2) {
+	public Background(String s1,String s2, int time) {
 		
 		toggle = true;
 		
@@ -29,8 +29,8 @@ public class Background implements ActionListener {
 		}
 		catch(Exception e) {
 			e.printStackTrace();
-		}
-		timer = new Timer(200, this);
+		}	
+		timer = new Timer(time, this);
 		timer.start();
 	}
 		public void setPosition(double x, double y) {
