@@ -11,6 +11,11 @@ import javax.imageio.ImageIO;
 import Characters.characterEntity;
 import TileMap.Background;
 
+/**
+ *
+ * @author Treagle350
+ */
+
 public class LevelState extends GameState {
 	
 	protected characterEntity player;
