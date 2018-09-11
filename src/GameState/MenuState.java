@@ -7,6 +7,11 @@ import java.awt.event.KeyEvent;
 
 import TileMap.Background;
 
+/**
+ *
+ * @author Treagle350
+ */
+
 public class MenuState extends GameState {
 	
 	private Background bg;
