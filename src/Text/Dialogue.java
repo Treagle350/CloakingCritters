@@ -5,6 +5,11 @@ import java.awt.Font;
 import java.awt.Graphics2D;
 import java.util.ArrayList;
 
+/**
+ *
+ * @author Treagle350
+ */
+
 public class Dialogue {
 	private int lineDIGESTABLE;
 	//private int pageDIGESTABLE;
