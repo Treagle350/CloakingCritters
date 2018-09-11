@@ -3,6 +3,11 @@ package GameState;
 import java.awt.Graphics2D;
 import java.util.ArrayList;
 
+/**
+ *
+ * @author Treagle350
+ */
+
 public class GameStateManager {
 	
 	private ArrayList<GameState> gameStates;
