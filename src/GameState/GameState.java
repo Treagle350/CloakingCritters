@@ -1,5 +1,10 @@
 package GameState;
 
+/**
+ *
+ * @author Treagle350
+ */
+
 public abstract class GameState {
 	
 	protected GameStateManager gsm;
