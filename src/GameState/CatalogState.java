@@ -9,6 +9,11 @@ import javax.imageio.ImageIO;
 import TileMap.Background;
 import Text.Dialogue;
 
+/**
+ *
+ * @author Treagle350
+ */
+
 public class CatalogState extends GameState {
 	
 	private Background bg;
