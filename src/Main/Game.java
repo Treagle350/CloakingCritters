@@ -5,6 +5,11 @@ import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 
+/**
+ *
+ * @author Treagle350
+ */
+
 public class Game {
 	
 	public static void main(String[] args) {
