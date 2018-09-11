@@ -99,6 +99,14 @@ public class CatalogState extends GameState {
 		
 		String newLine = "                        ";
 		
+		/*
+		The textual information found in this section of the software, issued to represent the actual
+		theory upon which the software was created, will henceforth be referenced as this work.
+		
+		This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. 
+		To view a copy of this license, visit http://creativecommons.org/licenses/by-sa/4.0/.
+		*/
+		
 		String string1 = ("Hello, this is the help page of Cloaking Critters.") + newLine + ("This is mainly intended as a fast way to get   aqcuinated with the    ideology behind this   videogame.            ") + newLine  + ("Having said that,      this is a videogame that tries to explain the exact nature of emotions. Or more specifically, the things we end up doing to cover them up.");
 		String string1a = ("Emotions are a means for two social entities to convey a hierarchical  standing toward one    another. Hence why     emotions, unlike logic, needs to be validated by external means.       ") + newLine + ("To portray this using an example : Imagine an   angry customer yelling at a cashier over a    mispriced item.");
 		String string1b = ("As stated on the previous page, conflict is a reaction to a perceived social  imbalance.            ")+ newLine +("Hence when the social  imbalance gets resolved, the conflict dissolves." + newLine + "Therefore if one wants to stop conflict effectively you have to address the cause underneath, and  not the consequences   themselves.");
