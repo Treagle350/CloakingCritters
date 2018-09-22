@@ -6,9 +6,8 @@ import java.awt.Toolkit;
 import javax.swing.JFrame;
 
 /**
- *
- * @author Treagle350
- */
+* @author Treagle350
+**/
 
 public class Game {
 	

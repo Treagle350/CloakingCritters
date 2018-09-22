@@ -10,9 +10,8 @@ import TileMap.Background;
 import Text.Dialogue;
 
 /**
- *
- * @author Treagle350
- */
+* @author Treagle350
+**/
 
 public class CatalogState extends GameState {
 	

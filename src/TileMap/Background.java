@@ -7,6 +7,10 @@ import java.awt.image.*;
 import javax.imageio.ImageIO;
 import javax.swing.Timer;
 
+/**
+* @author Treagle350
+**/
+
 public class Background implements ActionListener {
 	
 	private BufferedImage image;

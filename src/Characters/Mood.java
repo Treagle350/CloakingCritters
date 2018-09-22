@@ -1,5 +1,9 @@
 package Characters;
 
+/**
+* @author Treagle350
+**/
+
 public class Mood {
 	int ectasy;
 	int admiration;

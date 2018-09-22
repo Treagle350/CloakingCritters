@@ -11,9 +11,8 @@ import GameState.GameStateManager;
 import java.awt.event.*;
 
 /**
- *
- * @author Treagle350
- */
+* @author Treagle350
+**/
 
 @SuppressWarnings("serial")
 public class GamePanel extends JPanel implements Runnable, KeyListener{

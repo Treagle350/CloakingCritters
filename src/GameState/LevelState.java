@@ -4,17 +4,14 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
-import java.awt.image.BufferedImage;
 
-import javax.imageio.ImageIO;
-
+import Assets.Boundary;
 import Characters.characterEntity;
 import TileMap.Background;
 
 /**
- *
- * @author Treagle350
- */
+* @author Treagle350
+**/
 
 public class LevelState extends GameState {
 	
@@ -22,7 +19,7 @@ public class LevelState extends GameState {
 	private characterEntity npc;
 	private Background bg;
 	boolean happy = false;
-	BufferedImage image;
+	Boundary cliff;
 	Font font;
 	
 	public LevelState(GameStateManager gsm) {
@@ -32,8 +29,9 @@ public class LevelState extends GameState {
 		player = new characterEntity(70, 70);
 		bg = new Background("/Backgrounds/levela.png","/Backgrounds/levelb.png", 350);
 		
+		cliff = new Boundary();
+		
 		try {
-			image = ImageIO.read(getClass().getResourceAsStream("/Characters/emoticon_ectasy.png"));
 			font = new Font("Arial", Font.PLAIN, 9);
 		}
 		catch(Exception e) {
@@ -61,27 +59,33 @@ public class LevelState extends GameState {
 		player.add(g);
 		npc.add(g);
 		if(happy) {
-			g.drawImage(image, (int)player.x, (int)player.y-13, null);
+			player.greet(g);
 		}
 		g.setColor(Color.BLACK);
 		g.setFont(font);
 		g.drawString("Greet others with 'F'.", 70, 215);
 	}
 
+	//TODO : Automatic recalculation of bounds with resizing window !
+	
 	@Override
 	public void keyPressed(int k) {
 		// TODO Auto-generated method stub
 		if(k == KeyEvent.VK_LEFT) {
 			player.x = player.x - 2;
+			player.x = cliff.checkBoundary(player.x, player.y)[0];
 		}
 		if(k == KeyEvent.VK_RIGHT) {
 			player.x = player.x + 2;
+			player.x = cliff.checkBoundary(player.x, player.y)[0];
 		}
-		if(k == KeyEvent.VK_UP) {
+		if(k == KeyEvent.VK_UP ) {
 			player.y = player.y - 2;
+			player.y = cliff.checkBoundary(player.x, player.y)[1];
 		}
 		if(k == KeyEvent.VK_DOWN) {
 			player.y = player.y + 2;
+			player.y = cliff.checkBoundary(player.x, player.y)[1];
 		}
 		if(k == KeyEvent.VK_F) {
 			happy = true;

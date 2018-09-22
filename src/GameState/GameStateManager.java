@@ -4,9 +4,8 @@ import java.awt.Graphics2D;
 import java.util.ArrayList;
 
 /**
- *
- * @author Treagle350
- */
+* @author Treagle350
+**/
 
 public class GameStateManager {
 	

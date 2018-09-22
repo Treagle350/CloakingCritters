@@ -8,6 +8,10 @@ import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
 import javax.swing.Timer;
 
+/**
+* @author Treagle350
+**/
+
 public class Sprite implements ActionListener {
 	
 	private int x;
