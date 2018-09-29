@@ -9,6 +9,8 @@ import java.awt.image.BufferedImage;
 
 import javax.imageio.ImageIO;
 
+import Assets.RadiusBoundary;
+
 public class characterEntity {
 	
 	int sanity;
@@ -19,9 +21,12 @@ public class characterEntity {
 	Mood nature;
 	BufferedImage image;
 	Sprite sprite;
+	
+	public RadiusBoundary personalSpace;
 
 	public characterEntity(int x, int y){
 		sanity = 100;
+		personalSpace = new RadiusBoundary();
 		
 		this.x = x;
 		this.y = y;

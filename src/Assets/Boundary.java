@@ -4,16 +4,16 @@ package Assets;
 * @author Treagle350
 **/
 
-public class Boundary {
+public abstract class Boundary {
 
-	private double bound;
-	private double upperbound;
-	private double lowerbound;
+	protected double bound;
+	protected double upperbound;
+	protected double lowerbound;
 	
-	public boolean inBoundsYup;
-	public boolean inBoundsYdown;
-	public boolean inBoundsXleft;
-	public boolean inBoundsXright;
+	protected boolean inBoundsYup;
+	protected boolean inBoundsYdown;
+	protected boolean inBoundsXleft;
+	protected boolean inBoundsXright;
 	
 	public Boundary() {
 		
@@ -47,12 +47,12 @@ public class Boundary {
 		return result;
 	}
 	
+	protected abstract void calculateBoundary(int x, int y);
+	
 	public int[] checkBoundary(int x, int y) {
 		int[] result = {0,0};
 		
-		bound = ((-0.0025)*(Math.pow(x-140, 2)))-25;
-		lowerbound = ((-0.0025)*(Math.pow((x - 2)-140, 2)))-25;
-		upperbound = ((-0.0025)*(Math.pow((x + 2)-140, 2)))-25;
+		calculateBoundary(x,y);
 		
 		if(y >= Math.abs(bound)) {
 			inBoundsYup = true;

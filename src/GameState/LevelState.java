@@ -5,7 +5,7 @@ import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 
-import Assets.Boundary;
+import Assets.CliffBoundary;
 import Characters.characterEntity;
 import TileMap.Background;
 
@@ -19,7 +19,7 @@ public class LevelState extends GameState {
 	private characterEntity npc;
 	private Background bg;
 	boolean happy = false;
-	Boundary cliff;
+	CliffBoundary cliff;
 	Font font;
 	
 	public LevelState(GameStateManager gsm) {
@@ -29,7 +29,7 @@ public class LevelState extends GameState {
 		player = new characterEntity(70, 70);
 		bg = new Background("/Backgrounds/levela.png","/Backgrounds/levelb.png", 350);
 		
-		cliff = new Boundary();
+		cliff = new CliffBoundary();
 		
 		try {
 			font = new Font("Arial", Font.PLAIN, 9);
@@ -63,7 +63,7 @@ public class LevelState extends GameState {
 		}
 		g.setColor(Color.BLACK);
 		g.setFont(font);
-		g.drawString("Greet others with 'F'.", 70, 215);
+		g.drawString("Interact with others using 'F'.", 70, 215);
 	}
 
 	//TODO : Automatic recalculation of bounds with resizing window !
@@ -74,18 +74,22 @@ public class LevelState extends GameState {
 		if(k == KeyEvent.VK_LEFT) {
 			player.x = player.x - 2;
 			player.x = cliff.checkBoundary(player.x, player.y)[0];
+			//player.x = npc.personalSpace.checkBoundary(player.x, player.y)[0];
 		}
 		if(k == KeyEvent.VK_RIGHT) {
 			player.x = player.x + 2;
 			player.x = cliff.checkBoundary(player.x, player.y)[0];
+			//player.x = npc.personalSpace.checkBoundary(player.x, player.y)[0];
 		}
 		if(k == KeyEvent.VK_UP ) {
 			player.y = player.y - 2;
 			player.y = cliff.checkBoundary(player.x, player.y)[1];
+			//player.y = npc.personalSpace.checkBoundary(player.x, player.y)[1];
 		}
 		if(k == KeyEvent.VK_DOWN) {
 			player.y = player.y + 2;
 			player.y = cliff.checkBoundary(player.x, player.y)[1];
+			//player.y = npc.personalSpace.checkBoundary(player.x, player.y)[1];
 		}
 		if(k == KeyEvent.VK_F) {
 			happy = true;

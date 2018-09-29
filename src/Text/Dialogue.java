@@ -19,6 +19,7 @@ public class Dialogue {
 	final int y;
 	Graphics2D g;
 	int size;
+	String enterKeyword;
 	
 	private Font font;
 	
@@ -30,9 +31,10 @@ public class Dialogue {
 		this.y = y;
 		this.g = g;
 		size = 0;
+		enterKeyword = "#ENTER";
 		
 		try {
-			font = new Font("Century Gothic", Font.PLAIN, fontSize);
+			font = new Font("Times New Roman", Font.PLAIN, fontSize);
 		}
 		catch(Exception e) {
 			e.printStackTrace();
@@ -72,9 +74,14 @@ public class Dialogue {
 			digestableString = "";
 			string = string.substring(index);
 			while(sentenceLength < lineDIGESTABLE && count < alineaLength) {
-				digestableString = digestableString + words[count] + " ";
-				count = count + 1;
-				sentenceLength = digestableString.length();
+				if(words[count].equals(enterKeyword)) {
+					sentenceLength = lineDIGESTABLE;
+					count = count + 1;
+				}else {
+					digestableString = digestableString + words[count] + " ";
+					count = count + 1;
+					sentenceLength = digestableString.length();
+				}
 			}
 			sentenceLength = 0;
 			index = digestableString.lastIndexOf(" ");

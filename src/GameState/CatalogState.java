@@ -21,6 +21,7 @@ public class CatalogState extends GameState {
 	
 	private BufferedImage image;
 	private BufferedImage plutchik;
+	private BufferedImage plutchik3d;
 	private BufferedImage optimism;
 	private BufferedImage love;
 	private BufferedImage submission;
@@ -38,6 +39,7 @@ public class CatalogState extends GameState {
 		try {
 			bg = new Background("/Backgrounds/book1.png","/Backgrounds/book2.png", 200);
 			plutchik = ImageIO.read(getClass().getResourceAsStream("/Sprites/plutchik.png"));
+			plutchik3d = ImageIO.read(getClass().getResourceAsStream("/Sprites/plutchik3da.png"));
 			optimism = ImageIO.read(getClass().getResourceAsStream("/Profiles/optimism2.png"));
 			love = ImageIO.read(getClass().getResourceAsStream("/Profiles/love2.png"));
 			submission = ImageIO.read(getClass().getResourceAsStream("/Profiles/submission2.png"));
@@ -121,10 +123,10 @@ public class CatalogState extends GameState {
 		String string1j = ("Remorse is a secondary emotion arising from both grief and disgust.    ") + newLine + ("Someone remorseful is  going to regret everything he/she comes into contact with, generally feeling sorry for themselves along the way.              ") + newLine + ("They live in remorse   because they're fuelled by love.");
 		String string1k = ("Contempt is a secondary emotion arising from both disgust and rage.     ") + newLine + ("Someone contemptive is going to distance themself from others to protect their own, because they innately live in submission.") + newLine + ("By living in disgust for the hazards that could harm, one can use his  anger to eliminate the hazard.");
 		String string1l = ("Aggression is a secondary emotion arising from both rage and vigilance.   ") + newLine + ("Someone aggressive is  going to look for answers at the cost of themselves and others, because they innately live in awe. ") + newLine + ("Their pursuit for answers stems from the fear they have for the unforseenable.");
-		String string1m = ("The innate preference  over certain emotions, and dislike over others.");
-		String string1n = ("This work is mainly intended to inspire others into rethinking some of their stances regarding certain conflicting phenomena." + newLine + "It aims to promote     understanding as to allow for every single entity in any given social setting to achieve a greater degree of freedom.");
+		String string1m = newLine + newLine + newLine + newLine + newLine + newLine + "                 " + ("The innate preference  over certain emotions, and dislike over others.");
+		String string1n = ("This work is mainly    intended to inspire others into rethinking some of their stances regarding certain conflicting    phenomena.            " + newLine + "It aims to promote     understanding as to allow for every single entity in any given social setting to achieve a greater degree of freedom.");
 		
-		Dialogue page1 = new Dialogue(DIGESTABLE, 30, 50, g, 9);
+		Dialogue page1 = new Dialogue(DIGESTABLE, 30, 50, g, 11);
 		page1.dialogueMaker(string1);
 		page1.dialogueMaker(string1a);
 		page1.dialogueMaker(string1b);
@@ -155,10 +157,10 @@ public class CatalogState extends GameState {
 		String string2j = newLine + newLine + newLine + newLine + newLine + newLine + "                 " + ("By living in love, one comes to realise the things one could have done better to safeguard that love.") + newLine + ("They end up taking a lot of remorse up as 'their own fault' because they trust and love the ones they're doing it for.");
 		String string2k = newLine + newLine + newLine + newLine + newLine + newLine + "                 " + ("However in the process of doing so, one has to submit to the cause he/she is trying to protect. ") + newLine + ("This because one has to trust the cause he/she is trying to defend, whilst simultaneously fearing any threath to it.");
 		String string2l = newLine + newLine + newLine + newLine + newLine + newLine + "                 " + ("Seeing everything      unforseenable as an    unwelcome surprise, they can end up pushing     themselves and others to the brink of despair to solve their fears.");
-		String string2m = ("Not going to lie, I'm still researching this.");
+		String string2m = newLine + newLine + newLine + newLine + newLine + newLine + "                 " + ("Not going to lie, I'm still researching this.");
 		String string2n = ("Created by Treagle350." + newLine + "All ideas issued in this help section of the game are licensed under the Creative Commons       Attribution-ShareAlike 4.0 International License." + newLine + "No freedom is trully free unless others can get to enjoy it as well.");
 		
-		Dialogue page2 = new Dialogue(DIGESTABLE, 167, 50, g, 9);
+		Dialogue page2 = new Dialogue(DIGESTABLE, 167, 50, g, 11);
 		page2.dialogueMaker(string2);
 		page2.dialogueMaker(string2a);
 		page2.dialogueMaker(string2b);
@@ -203,6 +205,9 @@ public class CatalogState extends GameState {
 				break;
 			case 12:
 				image = aggression;
+				break;
+			case 13:
+				image = plutchik3d;
 				break;
 			default:
 				image = null;

@@ -2,6 +2,7 @@ package GameState;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.FontMetrics;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 
@@ -26,6 +27,9 @@ public class MenuState extends GameState {
 	private Font titleFont;
 	
 	private Font font;
+	private Font subFont;
+	
+	FontMetrics submetrics;
 	
 	public MenuState(GameStateManager gsm) {
 		this.gsm = gsm;
@@ -37,6 +41,7 @@ public class MenuState extends GameState {
 			titleFont = new Font("Century Gothic", Font.PLAIN, 28);
 		
 			font = new Font("Arial", Font.PLAIN, 12);
+			subFont = new Font("Arial", Font.PLAIN, 9);
 		}
 		catch(Exception e) {
 			e.printStackTrace();
@@ -64,6 +69,13 @@ public class MenuState extends GameState {
 			}
 			g.drawString(options[i], 145, 140 + i * 15);
 		}
+		g.setFont(subFont);
+		submetrics = g.getFontMetrics(subFont);
+		g.setColor(Color.RED);
+		String author = "© Treagle350";
+		g.drawString(author, 160 - (submetrics.stringWidth(author)/2), 210);
+		g.drawString("Disclaimer : All information provided by this program is licensed under", 10, 220);
+		g.drawString("the Creative Commons Attribution-ShareAlike 4.0 International License.", 10, 230);
 	}
 	private void select() {
 		if(currentChoice == 0) {
