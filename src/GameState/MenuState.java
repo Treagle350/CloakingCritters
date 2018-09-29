@@ -72,7 +72,7 @@ public class MenuState extends GameState {
 		g.setFont(subFont);
 		submetrics = g.getFontMetrics(subFont);
 		g.setColor(Color.RED);
-		String author = "© Treagle350";
+		String author = "Created by Treagle350";
 		g.drawString(author, 160 - (submetrics.stringWidth(author)/2), 210);
 		g.drawString("Disclaimer : All information provided by this program is licensed under", 10, 220);
 		g.drawString("the Creative Commons Attribution-ShareAlike 4.0 International License.", 10, 230);
