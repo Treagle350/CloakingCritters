@@ -1,5 +1,6 @@
 # CloakingCritters
 A pschological self-development tool disguised as a videogame.
+
 Explore your emotions as you explore the game.
 
 ![Demonstration](https://github.com/Treagle350/CloakingCritters/blob/master/Demo.gif)
